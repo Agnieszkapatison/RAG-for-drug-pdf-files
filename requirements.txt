@@ -1,6 +1,7 @@
 langchain
 langchain-openai
 langchain-pinecone
+langchain-community
 pypdf
 docarray
 pinecone-client
@@ -9,3 +10,6 @@ python-dotenv
 tiktoken
 ruff
 scikit-learn
+pymupdf
+faiss-cpu
+
