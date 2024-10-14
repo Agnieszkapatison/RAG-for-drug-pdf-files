@@ -1,0 +1,11 @@
+langchain
+langchain-openai
+langchain-pinecone
+pypdf
+docarray
+pinecone-client
+pydantic==1.10.8
+python-dotenv
+tiktoken
+ruff
+scikit-learn
