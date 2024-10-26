@@ -12,5 +12,5 @@ ruff
 scikit-learn
 pymupdf
 faiss-cpu
-pytube
-whisper
+
+
