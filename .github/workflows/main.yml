@@ -1,0 +1,62 @@
+name: CI Pipeline for RAG Project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  setup:
+    name: Setup Environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9.13
+      - name: Install dependencies
+        run: |
+          python -m venv myenv
+          source myenv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+  code_quality:
+    name: Code Quality Check
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Run Pre-commit Hooks
+        run: |
+          source myenv/bin/activate
+          pip install pre-commit
+          pre-commit run --all-files
+
+  tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Run Tests
+        run: |
+          source myenv/bin/activate
+          chmod +x tools/run_tests.sh
+          ./tools/run_tests.sh
+      - name: Store Test Reports
+        if: success() || failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: junit-report
+          path: reports/junit.xml
+      - name: Store Coverage Report
+        if: success() || failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
+          path: reports/coverage.xml
+
