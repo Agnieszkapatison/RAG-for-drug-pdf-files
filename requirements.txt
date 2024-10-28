@@ -12,3 +12,4 @@ ruff
 scikit-learn
 pymupdf
 faiss-cpu
+tqdm
