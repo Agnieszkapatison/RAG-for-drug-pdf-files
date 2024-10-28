@@ -2,7 +2,7 @@
 Text Splitter Module.
 
 This module contains functions for splitting large pieces of text into smaller chunks.
-The `split_text_into_chunks` function uses a character-based splitting approach to 
+The `split_text_into_chunks` function uses a character-based splitting approach to
 break text into manageable segments with optional overlap between the chunks.
 
 Dependencies:
@@ -16,6 +16,7 @@ Usage Example:
 """
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+
 
 def split_text_into_chunks(text, chunk_size=1500, chunk_overlap=100):
     """

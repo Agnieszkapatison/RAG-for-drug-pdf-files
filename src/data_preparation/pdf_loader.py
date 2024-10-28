@@ -2,7 +2,7 @@
 PDF Loader Module.
 
 This module contains functions for loading text from all PDF files in a specified folder.
-The `load_all_pdfs` function reads all PDF files in the given directory and concatenates 
+The `load_all_pdfs` function reads all PDF files in the given directory and concatenates
 their text into a single string.
 
 Dependencies:
@@ -17,8 +17,10 @@ Usage Example:
 """
 
 import os
+
 import fitz  # PyMuPDF
 from tqdm import tqdm
+
 
 def load_all_pdfs(pdf_folder):
     """
@@ -50,4 +52,3 @@ def load_all_pdfs(pdf_folder):
             print(f"Error processing file {filename}: {e}")
 
     return all_text
-
