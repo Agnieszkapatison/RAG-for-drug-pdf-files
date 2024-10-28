@@ -1,6 +1,3 @@
-import os
-from dotenv import load_dotenv
-
 """
 Configuration module for loading environment variables.
 
@@ -9,6 +6,10 @@ and raises errors if any essential variable is missing. It provides a centralize
 location to access these variables, making the project configuration consistent
 and easier to manage.
 """
+
+import os
+
+from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
