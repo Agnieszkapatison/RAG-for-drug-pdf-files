@@ -1,1 +1,3 @@
-"""This file will be expanded in the future."""
+def create_retriever(pdf_vectorstore):
+    return pdf_vectorstore.as_retriever()
+
