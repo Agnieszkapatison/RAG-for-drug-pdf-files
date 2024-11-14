@@ -10,22 +10,30 @@ from pipeline.rag_pipeline import create_chain
 from langchain_core.output_parsers import StrOutputParser
 import os
 from langchain_openai.embeddings import OpenAIEmbeddings
+
 # Inicjalizacja parsera
 parser = StrOutputParser()
-# Inicjalizacja embeddingów z OpenAI
-embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
-# Flaga do sprawdzenia, czy embeddingi zostały załadowane
-embedding_loaded = False
 
-# Sprawdzenie, czy istnieje już zapisany indeks FAISS i ładowanie tylko raz
-if os.path.exists(FAISS_INDEX_PATH) and not embedding_loaded:
-    pdf_vectorstore = load_or_create_embeddings(None, FAISS_INDEX_PATH, embeddings)
-    embedding_loaded = True  # Ustawienie flagi na True, aby uniknąć ponownego ładowania
-else:
-    all_text = load_all_pdfs(PDF_FOLDER)
-    chunks = split_text_into_chunks(all_text)
-    pdf_vectorstore = load_or_create_embeddings(chunks, FAISS_INDEX_PATH, embeddings)
-    embedding_loaded = True
+@st.cache_resource
+def get_vectorstore(FAISS_INDEX_PATH, _embeddings, PDF_FOLDER):
+    if os.path.exists(FAISS_INDEX_PATH):
+        return load_or_create_embeddings(None, FAISS_INDEX_PATH, _embeddings)
+    else:
+        # Ładowanie i przetwarzanie PDF-ów
+        documents = load_all_pdfs(PDF_FOLDER)
+        all_chunks = []
+
+        for doc in documents:
+            # Dzielimy każdy tekst z osobna i dodajemy metadane z nazwą pliku
+            chunks = split_text_into_chunks(doc["text"], doc["source"])
+            all_chunks.extend(chunks)  # Dodajemy każdy chunk z metadanymi do listy
+
+        return load_or_create_embeddings(all_chunks, FAISS_INDEX_PATH, _embeddings)
+
+
+# Wczytanie vectorstore
+embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
+pdf_vectorstore = get_vectorstore(FAISS_INDEX_PATH, embeddings, PDF_FOLDER)
 
 # Tworzenie retrievera
 retriever = create_retriever(pdf_vectorstore)
@@ -42,13 +50,46 @@ chain = create_chain(retriever, prompt, model, parser)
 # Streamlit UI
 st.title("Interaktywny System Wyszukiwania Informacji")
 
+# Inicjalizacja historii pytań i odpowiedzi w sesji
+if "history" not in st.session_state:
+    st.session_state.history = []
+
+# Filtry wyszukiwania
+st.sidebar.write("### Filtry wyszukiwania")
+keywords = st.sidebar.text_input("Słowa kluczowe")
+
+# Opcje wyświetlania kontekstu i historii
+show_context = st.sidebar.checkbox("Pokaż fragment kontekstu", value=True)
+show_history = st.sidebar.checkbox("Pokaż historię pytań i odpowiedzi", value=True)
+
 # Wprowadzenie pytania przez użytkownika
 question = st.text_input("Wpisz swoje pytanie:")
 
 if st.button("Zapytaj"):
     # Przetworzenie zapytania za pomocą łańcucha
     response = chain.invoke({"question": question})
-    
-    # Wyświetlenie odpowiedzi
     st.write("### Odpowiedź")
     st.write(response)
+
+    # Dodanie pytania i odpowiedzi do historii
+    st.session_state.history.append({"question": question, "response": response})
+
+    # Wyświetlenie fragmentu kontekstu, jeśli zaznaczono
+    if show_context:
+        context_snippet = pdf_vectorstore.similarity_search(question, k=3)
+        if context_snippet:
+            st.write("#### Fragment kontekstu")
+            for snippet in context_snippet:
+                st.write(f"Źródło: {snippet.metadata.get('source', 'Nieznane')}")
+                st.write(snippet.page_content)
+
+
+
+# Wyświetlanie historii pytań i odpowiedzi, jeśli zaznaczono
+if show_history:
+    st.write("### Historia pytań i odpowiedzi")
+    for item in st.session_state.history:
+        st.write(f"**Pytanie**: {item['question']}")
+        st.write(f"**Odpowiedź**: {item['response']}")
+
+
