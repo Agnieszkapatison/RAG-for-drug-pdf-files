@@ -54,6 +54,7 @@ jobs:
     steps:
       - name: Run Tests
         run: |
+          python -m venv myenv
           source myenv/bin/activate
           chmod +x tools/run_tests.sh
           ./tools/run_tests.sh
@@ -63,7 +64,7 @@ jobs:
         with:
           name: junit-report
           path: reports/junit.xml
-      - name: Store Coverage Report
+      - name: Store Coverage Reports
         if: success() || failure()
         uses: actions/upload-artifact@v3
         with:
@@ -77,6 +78,7 @@ jobs:
     steps:
       - name: Run Performance Tests
         run: |
+          python -m venv myenv
           source myenv/bin/activate
           pytest tests/performance/ --benchmark-columns=min,max,mean,stddev --benchmark-json=reports/performance/performance.json
       - name: Store Performance Reports
@@ -85,4 +87,3 @@ jobs:
         with:
           name: performance-report
           path: reports/performance/
-          
