@@ -1,2 +1,7 @@
-database/
+database/*
+!.gitignore
 .env
+.DS_Store
+src/.DS_Store
+src/models/.DS_Store
+src/vectorstore/.DS_Store

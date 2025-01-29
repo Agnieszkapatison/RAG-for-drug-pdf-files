@@ -17,6 +17,7 @@ Usage Example:
 """
 
 import os
+
 import fitz  # PyMuPDF
 from tqdm import tqdm
 
@@ -55,4 +56,3 @@ def load_all_pdfs(pdf_folder):
             print(f"Error processing file {filename}: {e}")
 
     return documents
-

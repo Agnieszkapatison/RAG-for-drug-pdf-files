@@ -17,7 +17,8 @@ Usage Example:
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-def split_text_into_chunks(text, source, chunk_size=1500, chunk_overlap=400):
+
+def split_text_into_chunks(text, source, chunk_size=1500, chunk_overlap=100):
     """
     Split the provided text into smaller chunks with source metadata.
 
@@ -25,7 +26,7 @@ def split_text_into_chunks(text, source, chunk_size=1500, chunk_overlap=400):
         text (str): The text to be split.
         source (str): The source filename of the text.
         chunk_size (int, optional): The size of each chunk. Defaults to 1500.
-        chunk_overlap (int, optional): The overlap between chunks. Defaults to 200.
+        chunk_overlap (int, optional): The overlap between chunks. Defaults to 100.
 
     Returns:
         list: A list of dictionaries, each containing a text chunk and its source metadata.
@@ -33,6 +34,5 @@ def split_text_into_chunks(text, source, chunk_size=1500, chunk_overlap=400):
     splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
     chunks = splitter.split_text(text)
 
-    # Dodanie źródła jako metadane do każdego fragmentu
+    # Add source as metadata to each chunk
     return [{"text": chunk, "metadata": {"source": source}} for chunk in chunks]
-
