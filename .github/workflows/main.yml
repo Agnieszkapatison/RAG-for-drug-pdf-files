@@ -81,3 +81,31 @@ jobs:
         with:
           name: coverage-report
           path: reports/coverage.xml
+
+  performance_tests:
+    name: Run Performance Tests
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9.13
+      - name: Install dependencies
+        run: |
+          python -m venv myenv
+          source myenv/bin/activate
+          pip install -r requirements.txt
+      - name: Run Performance Tests
+        run: |
+          source myenv/bin/activate
+          pytest tests/performance/ --benchmark-columns=min,max,mean,stddev --benchmark-json=reports/performance/performance.json
+      - name: Store Performance Reports
+        if: success() || failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: performance-report
+          path: reports/performance/
+          
