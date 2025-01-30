@@ -85,6 +85,23 @@ streamlit run src/app.py
 ![Zrzut ekranu 2025-01-30 o 23 37 38](https://github.com/user-attachments/assets/28b940b8-5be6-4c49-a0a8-6265bc4155a4)
 
 
+## Testing Framework
+The project includes unit, integration, and performance tests to ensure the reliability and correctness of the Retrieval-Augmented Generation (RAG) model.
+
+### Test Structure
+All tests are located in the tests/ directory and categorized as:
+
+Unit Tests (tests/unit/): Validate individual components, such as text splitting and embedding storage.
+Integration Tests (tests/integration/): Ensure different modules work together correctly.
+Performance Tests (tests/performance/): Evaluate the system’s efficiency and response time.
+
+
+## Tools Directory
+The tools/ directory contains useful scripts to automate testing and security checks:
+
+run_tests.sh / run_tests.cmd → Runs all tests and generates reports.
+scan_security.sh / scan_security.cmd → Performs a security scan using bandit to detect vulnerabilities.
+check_locally.sh / check_locally.cmd → Ensures that local dependencies and pre-commit hooks are correctly configured.
 
 
 
