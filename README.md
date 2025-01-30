@@ -116,9 +116,3 @@ This project was developed and validated by **Agnieszka Wyłupek, M.Sc. in Pharm
 For inquiries or collaboration opportunities, feel free to reach out via:  
 📧 **Email:** [agnieszka.chrastek@wp.pl]  
 🔗 **LinkedIn:** [www.linkedin.com/in/agnieszka-wyłupek-348b21278]  
-
-
-
-
-
-
