@@ -65,7 +65,7 @@ You need to install **all required packages** before running the project. Run:
 ```bash
 pip install -r requirements.txt
 ```
-###3️⃣ Run the System Using Either Option
+### 3️⃣ Run the System Using Either Option
 The system provides two interface options, allowing users to choose the method that best suits their needs:
 
 🔹 CLI Mode (Command-Line Interface) – main.py
