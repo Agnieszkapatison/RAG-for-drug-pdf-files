@@ -81,3 +81,33 @@ jobs:
         with:
           name: coverage-report
           path: reports/coverage.xml
+
+  security_scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9.13
+      - name: Install dependencies
+        run: |
+          python -m venv myenv
+          source myenv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Create directories for reports
+        run: |
+          mkdir -p reports
+      - name: Scan for security issues
+        run: |
+          source myenv/bin/activate
+          bandit -r src/ -o reports/bandit_report.txt
+      - name: Upload Security Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: bandit-report
+          path: reports/bandit_report.txt
