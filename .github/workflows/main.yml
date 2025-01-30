@@ -98,6 +98,9 @@ jobs:
           python -m venv myenv
           source myenv/bin/activate
           pip install -r requirements.txt
+      - name: Create directories for reports
+        run: |
+          mkdir -p reports/performance
       - name: Run Performance Tests
         run: |
           source myenv/bin/activate
