@@ -88,8 +88,6 @@ streamlit run src/app.py
 ## Testing Framework
 The project includes unit, integration, and performance tests to ensure the reliability and correctness of the Retrieval-Augmented Generation (RAG) model.
 
-### Test Structure
-All tests are located in the tests/ directory and categorized as:
 
 Unit Tests (tests/unit/): Validate individual components, such as text splitting and embedding storage.
 Integration Tests (tests/integration/): Ensure different modules work together correctly.
