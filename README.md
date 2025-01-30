@@ -101,7 +101,7 @@ The tools/ directory contains useful scripts to automate testing and security ch
 - check_locally.sh / check_locally.cmd → Ensures that local dependencies and pre-commit hooks are correctly configured.
 
 #  **Author**
-This project was developed and validated by **MSc. Pharmacist Agnieszka Wyłupek**.  
+This project was developed and validated by **Agnieszka Wyłupek, M.Sc. in Pharmacy, licensed pharmacist**.
 
 ---
 
