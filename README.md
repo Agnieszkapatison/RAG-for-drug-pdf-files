@@ -89,17 +89,17 @@ streamlit run src/app.py
 The project includes unit, integration, and performance tests to ensure the reliability and correctness of the Retrieval-Augmented Generation (RAG) model.
 
 
-Unit Tests (tests/unit/): Validate individual components, such as text splitting and embedding storage.
-Integration Tests (tests/integration/): Ensure different modules work together correctly.
-Performance Tests (tests/performance/): Evaluate the system’s efficiency and response time.
+- Unit Tests (tests/unit/): Validate individual components, such as text splitting and embedding storage.
+- Integration Tests (tests/integration/): Ensure different modules work together correctly.
+- Performance Tests (tests/performance/): Evaluate the system’s efficiency and response time.
 
 
 ## Tools Directory
 The tools/ directory contains useful scripts to automate testing and security checks:
 
-run_tests.sh / run_tests.cmd → Runs all tests and generates reports.
-scan_security.sh / scan_security.cmd → Performs a security scan using bandit to detect vulnerabilities.
-check_locally.sh / check_locally.cmd → Ensures that local dependencies and pre-commit hooks are correctly configured.
+- run_tests.sh / run_tests.cmd → Runs all tests and generates reports.
+- scan_security.sh / scan_security.cmd → Performs a security scan using bandit to detect vulnerabilities.
+- check_locally.sh / check_locally.cmd → Ensures that local dependencies and pre-commit hooks are correctly configured.
 
 
 
