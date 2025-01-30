@@ -2,7 +2,6 @@
 
 ## Project Overview
 
-### System Overview
 This system was designed for **medical professionals**, allowing them to quickly retrieve **essential drug information** from **Summaries of Product Characteristics (ChPL)** available in the **official Polish Ministry of Health database** [(🔗 Link)](https://rejestry.ezdrowie.gov.pl/rpl/search/public).
 
 The **Retrieval-Augmented Generation (RAG)** model was developed by a **pharmacist (MSc in Pharmacy)**, ensuring that **all responses are validated by an expert** before being made available in the system.
@@ -101,7 +100,22 @@ The tools/ directory contains useful scripts to automate testing and security ch
 - scan_security.sh / scan_security.cmd → Performs a security scan using bandit to detect vulnerabilities.
 - check_locally.sh / check_locally.cmd → Ensures that local dependencies and pre-commit hooks are correctly configured.
 
+#  **Author**
+This project was developed and validated by **MSc. Pharmacist Agnieszka Wyłupek**.  
 
+---
+
+## ⚠ **Copyright & Usage Restrictions**
+📢 **Unauthorized copying, distribution, or use of this project without the author's explicit permission is strictly prohibited.**  
+📢 This project is intended for **educational and research purposes only**.  
+📢 For commercial or professional use, please contact the author.  
+
+---
+
+## 📬 **Contact**
+For inquiries or collaboration opportunities, feel free to reach out via:  
+📧 **Email:** [agnieszka.chrastek@wp.pl]  
+🔗 **LinkedIn:** [www.linkedin.com/in/agnieszka-wyłupek-348b21278]  
 
 
 
