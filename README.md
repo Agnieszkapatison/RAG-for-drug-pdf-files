@@ -41,14 +41,14 @@ Each document is **converted from PDF** and **split into smaller text chunks**, 
 
 ---
 
-# How to Run the Drug Information Search System (RAG)?
+## How to Run the Drug Information Search System (RAG)?
 
-## 1️⃣ Create a `.env` File
+### 1️⃣ Create a `.env` File
 Before running the system, create a `.env` file in the **project root directory** and add the following **environment variables**:
 
 ```ini
 OPENAI_API_KEY=your_openai_key_here
-MODEL=gpt-3.5-turbo
+MODEL= gpt-your_model
 PDF_FOLDER=your_patch_to_database/database
 ONEDRIVE_PATH_PDF=your_patch_to_database/database
 FAISS_INDEX_PATH=your_patch_to_database/database
@@ -59,8 +59,37 @@ FAISS_INDEX_PATH=your_patch_to_database/database
 
 ---
 
-## 2️⃣ Install Dependencies
+### 2️⃣ Install Dependencies
 You need to install **all required packages** before running the project. Run:
 
 ```bash
 pip install -r requirements.txt
+```
+###3️⃣ Run the System Using Either Option
+The system provides two interface options, allowing users to choose the method that best suits their needs:
+
+🔹 CLI Mode (Command-Line Interface) – main.py
+Run this if you prefer using a terminal-based interface:
+
+```bash
+python src/main.py
+```
+<img width="868" alt="Zrzut ekranu 2025-01-30 o 23 29 47" src="https://github.com/user-attachments/assets/e7636e8b-7737-47e1-bd79-c5392a361db1" />
+
+🔹 GUI Mode (Graphical Web Interface) – app.py (Streamlit-based)
+Run this if you prefer using a web interface with Streamlit:
+
+```bash
+streamlit run src/app.py
+```
+![Zrzut ekranu 2025-01-30 o 23 37 38](https://github.com/user-attachments/assets/28b940b8-5be6-4c49-a0a8-6265bc4155a4)
+
+
+
+
+
+
+
+
+
+
