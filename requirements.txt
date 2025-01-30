@@ -20,3 +20,4 @@ black
 pytest
 pytest-cov
 pytest-benchmark
+pytest-mock
