@@ -40,9 +40,47 @@ A **GPT-3.5 Turbo -0125** model generates responses based on retrieved context.
    _"No data in the attached sources."_
 
 ---
+# How to Run the Drug Information Search System (RAG)?
 
-## Ensuring Reliability
-✔ If embeddings **exist**, they are **loaded** instead of being recalculated.  
-✔ If embeddings **do not exist**, they are **generated from scratch** and saved.  
-✔ **Structured metadata** improves search accuracy and relevance.  
-✔ **The system ensures trustworthy responses** by restricting **GPT-3.5** to verified sources.  
+## 1️⃣ Create a `.env` File  
+Before running the system, create a `.env` file in the **project root directory** and add the following **environment variables**:
+
+```ini
+OPENAI_API_KEY=your_openai_key_here
+MODEL=gpt-3.5-turbo
+PDF_FOLDER=your_patch_to_database/database
+ONEDRIVE_PATH_PDF=your_patch_to_database/database
+FAISS_INDEX_PATH=your_patch_to_database/database
+You can replace gpt-3.5-turbo with any other OpenAI model (e.g., gpt-4-turbo, gpt-4).
+The system was tested on gpt-3.5-turbo-0125 and OpenAI Ada v2 embeddings.
+
+##2️⃣ Install Dependencies
+You need to install all required packages before running the project. Run:
+
+```ini
+pip install -r requirements.txt
+
+###3️⃣ Run the System Using Either Option
+The system provides two interface options, allowing users to choose the method that best suits their needs:
+
+🔹 CLI Mode (Command-Line Interface) – main.py
+🔹 GUI Mode (Graphical Web Interface) – app.py (Streamlit-based)
+
+Both interfaces work identically in retrieving Summaries of Product Characteristics (ChPL) and using OpenAI embeddings and FAISS for vector search.
+However, they differ in how users interact with the system.
+
+🔹 CLI Mode (Command-Line Interface) – main.py
+Run this if you prefer using a terminal-based interface:
+
+```ini
+python src/main.py
+The system will ask you to type a question and display the response in the terminal, along with the source of the retrieved information.
+
+🔹 GUI Mode (Graphical Web Interface) – app.py
+Run this if you prefer using a web interface with Streamlit:
+
+```ini
+streamlit run src/app.py
+A browser window will open, allowing you to enter a question and see the response in a structured format.
+
+The source of each retrieved answer is displayed along with the response.
