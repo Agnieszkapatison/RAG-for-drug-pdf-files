@@ -5,3 +5,5 @@ database/*
 src/.DS_Store
 src/models/.DS_Store
 src/vectorstore/.DS_Store
+.coverage*
+coverage_html/

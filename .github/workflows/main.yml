@@ -71,13 +71,13 @@ jobs:
           ./tools/run_tests.sh
       - name: Store Test Reports
         if: success() || failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: junit-report
           path: reports/junit.xml
       - name: Store Coverage Reports
         if: success() || failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: reports/coverage.xml
@@ -107,8 +107,7 @@ jobs:
           pytest tests/performance/ --benchmark-columns=min,max,mean,stddev --benchmark-json=reports/performance/performance.json
       - name: Store Performance Reports
         if: success() || failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: performance-report
           path: reports/performance/
-          
