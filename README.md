@@ -69,7 +69,7 @@ pip install -r requirements.txt
 The system provides two interface options, allowing users to choose the method that best suits their needs:
 
 🔹 CLI Mode (Command-Line Interface) – main.py
-Run this if you prefer using a terminal-based interface:
+
 
 ```bash
 python src/main.py
@@ -77,7 +77,7 @@ python src/main.py
 <img width="868" alt="Zrzut ekranu 2025-01-30 o 23 29 47" src="https://github.com/user-attachments/assets/e7636e8b-7737-47e1-bd79-c5392a361db1" />
 
 🔹 GUI Mode (Graphical Web Interface) – app.py (Streamlit-based)
-Run this if you prefer using a web interface with Streamlit:
+
 
 ```bash
 streamlit run src/app.py
