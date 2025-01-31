@@ -8,7 +8,7 @@ The **Retrieval-Augmented Generation (RAG)** model was developed by a **pharmaci
 
 The system supports **both Polish and English queries**, enabling **healthcare workers** to access **reliable, evidence-based drug-related information efficiently**.
 
-This project was developed using a dataset of **1,001 Summaries of Product Characteristics (ChPL) in PDF format**, sourced from the **official Ministry of Health website**.
+This project was developed using a dataset of **1,001 Summaries of Product Characteristics (ChPL) in PDF format**.
 
 ---
 
@@ -109,6 +109,7 @@ This project was developed and validated by **Agnieszka Wyłupek, M.Sc. in Pharm
 ---
 
 ## ⚠ **Copyright & Usage Restrictions**
+📢 **Unauthorized copying, distribution, or use of this project without the author's explicit permission is strictly prohibited.** 
 📢 This project is intended for **educational and research purposes only**.  
 📢 For commercial or professional use, please contact the author.  
 
