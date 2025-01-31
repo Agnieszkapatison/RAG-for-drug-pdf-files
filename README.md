@@ -24,7 +24,7 @@ Each document is **converted from PDF** and **split into smaller text chunks**, 
 ### 3️⃣ Generating Embeddings
 - The system was **tested with OpenAI Ada v2 embeddings**, but it allows **switching to other available embedding models** via configuration.  
 - **OpenAI embeddings** are used to create **vector representations** of text chunks.  
-- The system supports **both plain text and metadata-enriched embeddings**.  
+- All queries are converted into embeddings and matched against vectorized text chunks.
 
 ### 4️⃣ Indexing with FAISS
 - The generated **embeddings** are **stored in a FAISS index**.  
