@@ -91,6 +91,7 @@ The project includes unit, integration, and performance tests to ensure the reli
 - Unit Tests (tests/unit/): Validate individual components, such as text splitting and embedding storage.
 - Integration Tests (tests/integration/): Ensure different modules work together correctly.
 - Performance Tests (tests/performance/): Evaluate the system’s efficiency and response time.
+<img width="860" alt="Zrzut ekranu 2025-01-31 o 10 58 11" src="https://github.com/user-attachments/assets/d8494ace-19ea-4d7b-b0c8-5f25486068c9" />
 
 
 ## Tools Directory
