@@ -4,7 +4,7 @@
 
 This system was designed for **medical professionals**, allowing them to quickly retrieve **essential drug information** from **Summaries of Product Characteristics (ChPL)** available in the **official Polish Ministry of Health database** [(🔗 Link)](https://rejestry.ezdrowie.gov.pl/rpl/search/public).
 
-The **Retrieval-Augmented Generation (RAG)** model was developed by a **pharmacist (MSc in Pharmacy)**, ensuring that **all responses are validated by an expert** before being made available in the system.
+The **Retrieval-Augmented Generation (RAG)** model was developed by a **pharmacist**, ensuring that **all responses are validated by an expert** before being made available in the system.
 
 The system supports **both Polish and English queries**, enabling **healthcare workers** to access **reliable, evidence-based drug-related information efficiently**.
 
@@ -106,7 +106,6 @@ This project was developed and validated by **Agnieszka Wyłupek, M.Sc. in Pharm
 ---
 
 ## ⚠ **Copyright & Usage Restrictions**
-📢 **Unauthorized copying, distribution, or use of this project without the author's explicit permission is strictly prohibited.**  
 📢 This project is intended for **educational and research purposes only**.  
 📢 For commercial or professional use, please contact the author.  
 
