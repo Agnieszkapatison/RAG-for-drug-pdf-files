@@ -109,7 +109,7 @@ This project was developed and validated by **Agnieszka Wyłupek, M.Sc. in Pharm
 ---
 
 ## ⚠ **Copyright & Usage Restrictions**
-📢 **Unauthorized copying, distribution, or use of this project without the author's explicit permission is strictly prohibited.** 
+📢 **Unauthorized copying, distribution, or use of this project without the author's explicit permission is strictly prohibited.**  
 📢 This project is intended for **educational and research purposes only**.  
 📢 For commercial or professional use, please contact the author.  
 
