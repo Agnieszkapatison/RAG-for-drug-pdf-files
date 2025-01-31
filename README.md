@@ -99,6 +99,8 @@ The tools/ directory contains useful scripts to automate testing and security ch
 
 - run_tests.sh / run_tests.cmd → Runs all tests and generates reports.
 - scan_security.sh / scan_security.cmd → Performs a security scan using bandit to detect vulnerabilities.
+  <img width="687" alt="Zrzut ekranu 2025-01-31 o 11 22 29" src="https://github.com/user-attachments/assets/712b8b42-5f97-4736-8209-242783115be9" />
+
 - check_locally.sh / check_locally.cmd → Ensures that local dependencies and pre-commit hooks are correctly configured.
 
 #  **Author**
