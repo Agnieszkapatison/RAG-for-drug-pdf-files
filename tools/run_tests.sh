@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-# Ustawienie katalogu z kodem źródłowym jako ścieżki dla Pythona
-export PYTHONPATH=src
+mkdir -p reports
 
-# Uruchomienie testów z mierzeniem pokrycia kodu
-coverage run -m pytest tests/
-
-# Generowanie raportów pokrycia
-coverage xml -o "reports/coverage.xml"
-coverage html -d "reports/coverage_html"
-coverage report
+pytest tests/ \
+    --cov=src \
+    --cov-report=xml:reports/coverage.xml \
+    --cov-report=html:reports/coverage_html \
+    --cov-report=term \
+    --log-cli-level=debug \
+    --junitxml=reports/junit.xml \
+    "$@"  # Akceptujemy dodatkowe argumenty, np. --ignore=tests/performance/
