@@ -4,7 +4,7 @@
 
 This system was designed for **medical professionals**, allowing them to quickly retrieve **essential drug information** from **Summaries of Product Characteristics (ChPL)** available in the **official Polish Ministry of Health database** [(🔗 Link)](https://rejestry.ezdrowie.gov.pl/rpl/search/public).
 
-The **Retrieval-Augmented Generation (RAG)** model was developed by a **pharmacist (MSc in Pharmacy)**, ensuring that **all responses are validated by an expert** before being made available in the system.
+The **Retrieval-Augmented Generation (RAG)** model was developed by a **pharmacist**, ensuring that **all responses are validated by an expert** before being made available in the system.
 
 The system supports **both Polish and English queries**, enabling **healthcare workers** to access **reliable, evidence-based drug-related information efficiently**.
 
@@ -91,6 +91,7 @@ The project includes unit, integration, and performance tests to ensure the reli
 - Unit Tests (tests/unit/): Validate individual components, such as text splitting and embedding storage.
 - Integration Tests (tests/integration/): Ensure different modules work together correctly.
 - Performance Tests (tests/performance/): Evaluate the system’s efficiency and response time.
+<img width="860" alt="Zrzut ekranu 2025-01-31 o 10 58 11" src="https://github.com/user-attachments/assets/d8494ace-19ea-4d7b-b0c8-5f25486068c9" />
 
 
 ## Tools Directory
@@ -98,6 +99,8 @@ The tools/ directory contains useful scripts to automate testing and security ch
 
 - run_tests.sh / run_tests.cmd → Runs all tests and generates reports.
 - scan_security.sh / scan_security.cmd → Performs a security scan using bandit to detect vulnerabilities.
+  <img width="687" alt="Zrzut ekranu 2025-01-31 o 11 22 29" src="https://github.com/user-attachments/assets/712b8b42-5f97-4736-8209-242783115be9" />
+
 - check_locally.sh / check_locally.cmd → Ensures that local dependencies and pre-commit hooks are correctly configured.
 
 #  **Author**
@@ -106,7 +109,6 @@ This project was developed and validated by **Agnieszka Wyłupek, M.Sc. in Pharm
 ---
 
 ## ⚠ **Copyright & Usage Restrictions**
-📢 **Unauthorized copying, distribution, or use of this project without the author's explicit permission is strictly prohibited.**  
 📢 This project is intended for **educational and research purposes only**.  
 📢 For commercial or professional use, please contact the author.  
 
