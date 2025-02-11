@@ -73,7 +73,7 @@ The system provides two interface options, allowing users to choose the method t
 ```bash
 python src/main.py
 ```
-<img width="868" alt="Zrzut ekranu 2025-01-30 o 23 29 47" src="https://github.com/user-attachments/assets/e7636e8b-7737-47e1-bd79-c5392a361db1" />
+<img width="1296" alt="Zrzut ekranu 2025-02-11 o 23 01 50" src="https://github.com/user-attachments/assets/a96e350f-744d-4b93-912c-159ef303e0ac" />
 
 🔹 GUI Mode (Graphical Web Interface) – app.py (Streamlit-based)
 
